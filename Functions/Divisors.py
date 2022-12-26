@@ -20,3 +20,7 @@ def getProperDivisors(n):
     divisorsBitList = getDivisorsBitList(n)
     divisorsBitList[-1]=0
     return NumsFromBits(divisorsBitList)
+
+def sumOfProperDivisors(n):
+    properDivisors = getProperDivisors(n)
+    return sum(properDivisors)
