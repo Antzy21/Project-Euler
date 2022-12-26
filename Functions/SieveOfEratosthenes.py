@@ -3,7 +3,7 @@
 
 from math import ceil, sqrt
 
-def SoE(n):
+def SieveOfErathostenes(n):
     P = [1]*n
     m = ceil(sqrt(n))
     for i in range(2,m):
@@ -13,11 +13,3 @@ def SoE(n):
     P[0]=0
     P[1]=0
     return(P)
-
-def SumSoE(n):
-    P = SoE(2000000)
-    SumP = 0
-    for x, i in enumerate(P):
-        if i == 1:
-            SumP += x
-    return(SumP)
