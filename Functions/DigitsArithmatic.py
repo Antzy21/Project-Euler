@@ -4,7 +4,6 @@ def AddDigits(S):
         x += int(s)
     return x
 
-
 def MultiplyDigits(S):
     x = 1
     for s in str(S):
