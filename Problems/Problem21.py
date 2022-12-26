@@ -1,20 +1,14 @@
-from Functions.Divisors import getProperDivisors as pds
-from Functions.HandleDigits import AddDigits
+from Functions.Divisors import sumOfProperDivisors
+from Functions.DigitsArithmatic import AddDigits
 
-def d(n):
-    return sum(pds(n))
+def solve(n = 10000):
+    amicableNumbers = []
 
-n = 10000
-ami = []
+    for i in range(1,n+1):
+        j = sumOfProperDivisors(i)
+        if sumOfProperDivisors(j) == i:
+            if i != j:
+                amicableNumbers.append(i)
+                amicableNumbers.append(j)
 
-for i in range(1,n+1):
-    j = d(i)
-    if d(j) == i:
-        if i != j:
-            ami.append(i)
-            ami.append(j)
-            print(i, j)
-
-print(ami)
-
-print(sum(ami)/2)
+    return(sum(amicableNumbers)//2)

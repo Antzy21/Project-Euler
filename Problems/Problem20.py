@@ -1,6 +1,6 @@
 from math import factorial
-from Functions.HandleDigits import AddDigits
+from Functions.DigitsArithmatic import AddDigits
 
-
-print(AddDigits(factorial(100)))
-
+def solve(n = 100):
+    factorialN = factorial(n)
+    return AddDigits(factorialN)

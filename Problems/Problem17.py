@@ -1,20 +1,13 @@
 from Data.numberNames import units, tens, teens
 
 def GetWrittenName(n):
-    
     if n == 0:
         return 'zero'
-
     strn = str(n)
     name = ''
-
-
     name += powerten(strn, 4, 'thousand')
-
     name += powerten(strn, 3, 'hundred', True)
-
-    name += GetTensandUnits(int(strn[-2:]))
-
+    name += GetTensAndUnits(int(strn[-2:]))
     return name
 
 def GetUnitName(n):
@@ -22,12 +15,12 @@ def GetUnitName(n):
         raise Exception("Single digit only")
     return units[n]
 
-def GetTensandUnits(n):
-    if n>99 or 0>n:
+def GetTensAndUnits(n):
+    if n>99 or n<0:
         raise Exception("Invalid Number")
-    if 10>n:
+    if n<10:
         return GetUnitName(n)
-    if 20>n:
+    if n<20:
         return teens[n-10]
     nunits = int(str(n)[1])
     ntens = int(str(n)[0])
@@ -46,11 +39,9 @@ def powerten(strn, p, word, addand = False):
             name += 'and'
     return name
     
-
-S = ''
-for n in range(1,1001):
-    s = GetWrittenName(n)
-    print(s)
-    S += s
-
-print(len(S))
+def solve():
+    S = ''
+    for n in range(1,1001):
+        s = GetWrittenName(n)
+        S += s
+    return len(S)

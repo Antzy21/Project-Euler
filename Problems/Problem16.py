@@ -1,8 +1,6 @@
-from Functions.HandleDigits import AddDigits
+from Functions.DigitsArithmatic import AddDigits
 
-n = 1000
-S = 2**n
-x = AddDigits(S)
-
-print(x)
-
+def solve(n = 1000):
+    S = 2**n
+    x = AddDigits(S)
+    return x

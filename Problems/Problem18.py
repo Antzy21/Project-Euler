@@ -1,13 +1,10 @@
-import copy
 from Data.Problem18Triangle import triangle as T
 
-T.reverse()
-originalT = copy.deepcopy(T)
-
-for i, x in enumerate(T):
-    if len(T[i]) == 1:
-        print(T[i], originalT[i])
-        continue
-    for j, x2 in enumerate(T[i+1]):
-        T[i+1][j] += max(T[i][j], T[i][j+1])
-    print(T[i], originalT[i])
+def solve(triangle = T):
+    triangle.reverse()
+    for i, x in enumerate(triangle):
+        if len(x) == 1:
+            continue
+        for j, x2 in enumerate(triangle[i+1]):
+            triangle[i+1][j] += max(x[j], x[j+1])
+    return(triangle[i][0])

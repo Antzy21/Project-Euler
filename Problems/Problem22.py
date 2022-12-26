@@ -10,9 +10,12 @@ def calculateNameScore(name, log = False):
     if log:
         print(logString)
     return nameValue
-    
 
-def solve22(input, log = False):
+def getInput():
+    file = open('Data\p022_names.txt', 'r')
+    return file.read()
+
+def solve(input = getInput(), log = False):
     names = input.split(',')
     sum = 0
     names.sort()

@@ -13,7 +13,7 @@ def getSplitDivisorListForNthTriangleNumber(n):
         divisorList2 = getDivisorsBitList((n+1)//2)
     return divisorList1, divisorList2
 
-def solve(n):
+def solve(n=500):
     L = 0
     x = 0
     while L < n:
