@@ -9,3 +9,9 @@ def MultiplyDigits(S):
     for s in str(S):
         x *= int(s)
     return x
+
+def GetDigits(S):
+    arr = []
+    for s in str(S):
+        arr.append(int(s))
+    return arr
