@@ -10,4 +10,4 @@ def solve():
                     if int(T[2])==int(T[-3]):
                         if T not in Palendromes:
                             Palendromes.append(T)
-    return max(Palendromes)
+    return int(max(Palendromes))

@@ -4,4 +4,4 @@ def solve():
     S = 0
     for x in n:
         S += x
-    return(str(S)[0:10])
+    return(int(str(S)[0:10]))
