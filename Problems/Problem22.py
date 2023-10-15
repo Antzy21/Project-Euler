@@ -12,7 +12,7 @@ def calculateNameScore(name, log = False):
     return nameValue
 
 def getInput():
-    file = open('Data\p022_names.txt', 'r')
+    file = open('Data/p022_names.txt', 'r')
     return file.read()
 
 def solve(input = getInput(), log = False):
