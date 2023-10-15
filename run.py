@@ -22,14 +22,14 @@ from Problems import Problem23
 from Problems import Problem24
 from Problems import Problem67
 
-from multiprocessing import Process, cpu_count
 import time
-import queue
 from Functions.Divisors import getProperDivisors
 
 def printSolver(func, i):
+    t1 = time.perf_counter()
     result = func()
-    print(f"Problem {i}: {result}")
+    t2 = time.perf_counter()
+    print(f"Problem {i:3}: {result:12} - {round(t2-t1,2)}s")
 
 problems = {
     2: Problem2.solve,
