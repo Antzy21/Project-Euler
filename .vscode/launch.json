@@ -11,6 +11,14 @@
             "program": "run.py",
             "console": "integratedTerminal",
             "justMyCode": true
+        },
+        {
+            "name": "Flask api",
+            "type": "python",
+            "request": "launch",
+            "program": "flask_api.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
         }
     ]
 }
