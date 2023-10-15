@@ -18,30 +18,45 @@ from Problems import Problem19
 from Problems import Problem20
 from Problems import Problem21
 from Problems import Problem22
+from Problems import Problem23
+from Problems import Problem24
 from Problems import Problem67
+
+from multiprocessing import Process, cpu_count
+import time
+import queue
+from Functions.Divisors import getProperDivisors
 
 def printSolver(func, i):
     result = func()
     print(f"Problem {i}: {result}")
 
-printSolver(Problem2.solve, 2)
-printSolver(Problem3.solve, 3)
-printSolver(Problem4.solve, 4)
-printSolver(Problem5.solve, 5)
-printSolver(Problem6.solve, 6)
-printSolver(Problem7.solve, 7)
-printSolver(Problem8.solve, 8)
-printSolver(Problem9.solve, 9)
-printSolver(Problem11.solve, 11)
-printSolver(Problem12.solve, 12)
-printSolver(Problem13.solve, 13)
-printSolver(Problem14.solve, 14)
-printSolver(Problem15.solve, 15)
-printSolver(Problem16.solve, 16)
-printSolver(Problem17.solve, 17)
-printSolver(Problem18.solve, 18)
-printSolver(Problem19.solve, 19)
-printSolver(Problem20.solve, 20)
-printSolver(Problem21.solve, 21)
-printSolver(Problem22.solve, 22)
-printSolver(Problem67.solve, 67)
+problems = {
+    2: Problem2.solve,
+    3: Problem3.solve,
+    4: Problem4.solve,
+    5: Problem5.solve,
+    6: Problem6.solve,
+    7: Problem7.solve,
+    8: Problem8.solve,
+    9: Problem9.solve,
+    11: Problem11.solve,
+    12: Problem12.solve,
+    13: Problem13.solve,
+    14: Problem14.solve,
+    15: Problem15.solve,
+    16: Problem16.solve,
+    17: Problem17.solve,
+    18: Problem18.solve,
+    19: Problem19.solve,
+    20: Problem20.solve,
+    21: Problem21.solve,
+    22: Problem22.solve,
+    23: Problem23.solve,
+    24: Problem24.solve,
+    67: Problem67.solve,
+}
+
+for problemNumber in problems:
+    solveFunction = problems[problemNumber]
+    printSolver(solveFunction, problemNumber)
