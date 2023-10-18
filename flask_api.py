@@ -52,6 +52,10 @@ problems = {
     67: Problem67.solve,
 }
 
+@api.route('/')
+def index():
+    return '<h1>Hello World</h1>'
+
 @api.route('/healthcheck', methods=['Get'])
 def get_healthcheck():
     return json.dumps({
@@ -71,4 +75,4 @@ def get_solution(numberStr):
     return json.dumps(jsonObj)
 
 if __name__ == "__main__":
-    api.run()
+    api.run(debug=True)
