@@ -6,6 +6,7 @@ from Problems import Problem6
 from Problems import Problem7
 from Problems import Problem8
 from Problems import Problem9
+from Problems import Problem10
 from Problems import Problem11
 from Problems import Problem12
 from Problems import Problem13
@@ -40,6 +41,7 @@ problems = {
     7: Problem7.solve,
     8: Problem8.solve,
     9: Problem9.solve,
+    10: Problem10.solve,
     11: Problem11.solve,
     12: Problem12.solve,
     13: Problem13.solve,
@@ -57,6 +59,9 @@ problems = {
     67: Problem67.solve,
 }
 
-for problemNumber in problems:
-    solveFunction = problems[problemNumber]
-    printSolver(solveFunction, problemNumber)
+# for problemNumber in problems:
+#     solveFunction = problems[problemNumber]
+#     printSolver(solveFunction, problemNumber)
+
+problemNumber = 10
+printSolver(problems[problemNumber], problemNumber)
