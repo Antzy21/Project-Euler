@@ -14,7 +14,7 @@ digitsToPower5 = [
 ]
 
 def solve():
-    sum = 0
+    totalSum = 0
     for i in range(1,200000):
         digitToPower5Sum = 0
         for digit in GetDigits(i):
@@ -22,4 +22,4 @@ def solve():
             digitToPower5Sum += digitToPower5
         if i == digitToPower5Sum:
             totalSum += i
-    return sum
+    return totalSum

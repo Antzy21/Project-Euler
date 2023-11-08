@@ -5,6 +5,5 @@ def solve():
         interProd = 1
         for p in range(0,i):
             interProd = interProd * i
-        print(i, interProd % 10**10)
         sum = (sum + interProd) % 10**10
-    print(sum)
+    return(sum)
