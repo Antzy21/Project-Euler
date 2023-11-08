@@ -4,7 +4,10 @@ import os
 
 def _printSolver_(func, i):
     t1 = time.perf_counter()
-    result = func()
+    try:
+        result = func()
+    except:
+        result = "Error"
     t2 = time.perf_counter()
     print(f"Problem {i:3}: {result:12} - {round(t2-t1,2)}s")
 
