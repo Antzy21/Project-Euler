@@ -8,7 +8,7 @@ api = Flask(__name__)
 
 @api.route('/')
 def index():
-    return '<h1>Hello World</h1>'
+    return '<h1>Project Euler Solutions</h1>'
 
 @api.route('/healthcheck', methods=['Get'])
 def get_healthcheck():
@@ -16,11 +16,21 @@ def get_healthcheck():
         "healthy": True
     })
 
-@api.route('/problem/<numberStr>', methods=['Get'])
-def get_solution(numberStr):
-    number = int(numberStr)
+@api.route('/solve/<numberStr>', methods=['Get'])
+def solve(numberStr):
+    try:
+        number = int(numberStr)
+    except:
+        return(f"{numberStr} is not a number", 400)
+
+    if number not in problems:
+        return(f"No solution for {number}")
+
     solveFunction = problems[number]
-    result = solveFunction()
+    try:
+        result = solveFunction()
+    except:
+        result = "Error"
     jsonObj = {
         "problem": number,
         "solution": result
